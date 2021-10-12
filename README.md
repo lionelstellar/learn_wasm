@@ -1,2 +1,2 @@
 # learn_wasm
-webassembly playground
+[安装](installation.md ':include :type=code')
