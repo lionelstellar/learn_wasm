@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    printf("this is attack!\n");
+    printf("A cat!\n");
     return 0;
 }
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    printf("this is benign!\n");
+    printf("A dog!\n");
     return 0;
 }
 
