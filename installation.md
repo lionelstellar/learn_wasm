@@ -105,4 +105,22 @@ wasm-objdump: expected filename argument.
 Try '--help' for more information.
 ```
 
+### 3. lldb（基于虚拟机调试wasm）
+
+安装
+
+```bash
+$ apt-get install lldb
+```
+
+测试
+
+```bash
+$ lldb -- wasmtime -g test.wasm
+(lldb) target create "wasmtime"
+Current executable set to 'wasmtime' (x86_64).
+(lldb) settings set -- target.run-args  "-g" "test.wasm"
+(lldb) 
+```
+
 
