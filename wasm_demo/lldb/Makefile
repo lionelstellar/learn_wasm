@@ -1,4 +1,4 @@
 test:
-	clang-11 --sysroot=$(SYSROOT) main.c -o main.wasm
+	clang-11 --sysroot=$(SYSROOT) test.c -g -o test.wasm
 clean:
 	rm *.wasm 

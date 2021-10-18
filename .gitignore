@@ -57,3 +57,4 @@ runtime/*
 
 *.wasm
 .gdb_history
+output/*
