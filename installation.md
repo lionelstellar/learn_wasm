@@ -105,7 +105,7 @@ wasm-objdump: expected filename argument.
 Try '--help' for more information.
 ```
 
-### 3. lldb（基于虚拟机调试wasm）
+### 4. lldb（基于虚拟机调试wasm）
 
 安装
 
