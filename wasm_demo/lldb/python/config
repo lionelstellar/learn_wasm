@@ -1,5 +1,7 @@
 [DEFAULT]
+# wasm_demo = /home/foyjog/jyk/learn_wasm/wasm_demo/
 wasm_demo = /home/jiangyikun/learn_wasm/wasm_demo/
 project = lldb
 wasm_bin = test.wasm
+block_size = 0x100000
 

@@ -13,6 +13,7 @@ config.read('config')
 wasm_home = config['DEFAULT']['wasm_demo']
 project = config['DEFAULT']['project']
 wasm_bin = config['DEFAULT']['wasm_bin']
+block_size = config['DEFAULT']['block_size']
 wasm_file = os.path.join(wasm_home, project, wasm_bin)
 output_dir = os.path.join(wasm_home, project, "python/mem_output")
 if os.path.isdir(output_dir):
@@ -86,7 +87,8 @@ def dump_rt_mem(interval_list, pid):
         start_addr, end_addr = elem.split("-")
         start = int(start_addr, 16)
         end = int(end_addr, 16)
-        dump_block(pid, start, end, output)
+        print(end - start)
+        #dump_block(pid, start, end, output)
         print("[*] dump memory ok, pid={}, interval={}".format(pid, elem))
 
 def main():
