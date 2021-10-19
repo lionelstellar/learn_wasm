@@ -3,13 +3,17 @@
 #include <string.h>
 int main()
 {
-    char str[8] = "dog";
-    printf("ptr of str is %p\n", str);
+    // stack
+    char str[16] = "AAAAAAAAAAAAAAA";
+    printf("STACK DATA:%s\n",str);
+    printf("ptr of STACK str is %p\n", str);
 
+
+    // heap
     char *arr = (char *)malloc(16);
-    strcat(arr, str);
-    printf("%s\n",arr);
-    printf("ptr of arr is %p\n", arr);
+    arr = "BBBBBBBBBBBBBBB";
+    printf("HEAP DATA:%s\n",arr);
+    printf("ptr of HEAP arr is %p\n", arr);
     
     
     scanf("%s", str);
