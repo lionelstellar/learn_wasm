@@ -23,17 +23,13 @@ def main():
     
     section_list = os.listdir(section_dir)
     mem_list = os.listdir(mem_dir)
-
-    print(mem_list)
-    print(section_list)
-
-    for sec_elem in section_list:
-        for mem_elem in mem_list:
-            if check_in(os.path.join(section_dir, sec_elem), \
-                os.path.join(mem_dir, mem_elem)):
+    
+    for mem_elem in mem_list:
+        mem_block = read_block(os.path.join(mem_dir, mem_elem))
+        for sec_elem in section_list:
+            sec_block = read_block(os.path.join(section_dir, sec_elem))
+            if sec_block in mem_block:
                 print(sec_elem, "in", mem_elem)
-
-    # print(check_in(src_file, dest_file))
     
 
 if __name__ == "__main__":
