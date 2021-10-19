@@ -74,6 +74,10 @@ def check_between(addr, interval_list):
 
 def dump_block(pid, start, end, output):
     size = end - start
+    if size > 3000000:
+        print("oversize:", size)
+        return
+
     with open("/proc/%s/mem" % pid, 'rb') as f:
         f.seek(start)
         block = f.read(size)
@@ -87,8 +91,7 @@ def dump_rt_mem(interval_list, pid):
         start_addr, end_addr = elem.split("-")
         start = int(start_addr, 16)
         end = int(end_addr, 16)
-        print(end - start)
-        #dump_block(pid, start, end, output)
+        dump_block(pid, start, end, output)
         print("[*] dump memory ok, pid={}, interval={}".format(pid, elem))
 
 def main():
