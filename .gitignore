@@ -58,3 +58,4 @@ runtime/*
 *.wasm
 .gdb_history
 output/*
+mem_output

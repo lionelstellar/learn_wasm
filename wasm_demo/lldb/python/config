@@ -1,0 +1,5 @@
+[DEFAULT]
+wasm_demo = /home/jiangyikun/learn_wasm/wasm_demo/
+project = lldb
+wasm_bin = test.wasm
+

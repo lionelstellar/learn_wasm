@@ -1,6 +1,23 @@
-#!usr/bin/env python3
+#!/usr/bin/python3
+
+"""
+根据静态wasm二进制生成各个section的二进制块，放入section_dir目录
+"""
+
 import os
 import subprocess
+import configparser
+config = configparser.ConfigParser()
+config.read('config')
+wasm_home = config['DEFAULT']['wasm_demo']
+project = config['DEFAULT']['project']
+wasm_bin = config['DEFAULT']['wasm_bin']
+wasm_file = os.path.join(wasm_home, project, wasm_bin)
+section_dir = os.path.join(wasm_home, project, "python/sections")
+if not os.path.isdir(section_dir):
+    os.mkdir(section_dir)
+
+
 def gen_section_map(file):
     cmd = "wasm-objdump -h {}".format(file)
     mem_list = []
@@ -32,15 +49,13 @@ def dump_block(item, file, dest_dir):
         f.write(block)
 
 def main():
-    wasm_home = "/home/jiangyikun/learn_wasm/wasm_demo/"
-    file = os.path.join(wasm_home, "lldb/test.wasm")
-    dest_dir = os.path.join(wasm_home, "lldb/python/sections")
     
-    section_map = gen_section_map(file)
+    
+    section_map = gen_section_map(wasm_file)
 
     for elem in section_map:
         if elem[0] != "Custom":
-            dump_block(elem, file, dest_dir)
+            dump_block(elem, wasm_file, section_dir)
     
 
 if __name__ == "__main__":

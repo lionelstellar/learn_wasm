@@ -10,6 +10,9 @@ int main()
     strcat(arr, str);
     printf("%s\n",arr);
     printf("ptr of arr is %p\n", arr);
+    
+    
+    scanf("%s", str);
 
     return 0;
 }
