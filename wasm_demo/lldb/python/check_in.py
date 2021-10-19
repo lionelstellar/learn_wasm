@@ -18,12 +18,22 @@ def check_in(src_file, dest_file):
     return src in dest
 
 def main():
+    section_dir = os.path.join(wasm_home, project, "python/sections")
+    mem_dir = os.path.join(wasm_home, project, "python/mem_output")
     
-    
-    dest_file = os.path.join(wasm_home, project, wasm_bin)
-    src_file = os.path.join(wasm_home, project, "python/sections/Elem")
+    section_list = os.listdir(section_dir)
+    mem_list = os.listdir(mem_dir)
 
-    print(check_in(src_file, dest_file))
+    print(mem_list)
+    print(section_list)
+
+    for sec_elem in section_list:
+        for mem_elem in mem_list:
+            if check_in(os.path.join(section_dir, sec_elem), \
+                os.path.join(mem_dir, mem_elem)):
+                print(sec_elem, "in", mem_elem)
+
+    # print(check_in(src_file, dest_file))
     
 
 if __name__ == "__main__":

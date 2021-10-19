@@ -59,3 +59,4 @@ runtime/*
 .gdb_history
 output/*
 mem_output
+.vscode/c_cpp_properties.json
