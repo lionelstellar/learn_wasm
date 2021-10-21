@@ -4,10 +4,21 @@
 
 安装
 
+二进制安装
 ```bash
 $ wget https://wasmtime.dev/install.sh
 $ bash install.sh
 ```
+源码安装(需要rust环境，cargo/rustc版本1.55)
+```bash
+$ git clone https://github.com/bytecodealliance/wasmtime.git
+$ cd wasmtime
+$ git submodule update --init
+$ cargo build
+# 软链接
+ln -s /home/jiangyikun/learn_wasm/runtime/wasmtime/target/debug/wasmtime /usr/bin/wasmtime
+```
+
 
 测试
 

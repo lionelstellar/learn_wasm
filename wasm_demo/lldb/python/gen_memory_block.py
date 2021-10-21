@@ -50,7 +50,7 @@ def get_proc_maps(pid):
     ret_list = []
     interval_list = []
     for line in info.split("\n"):
-        if ".so" not in line:
+        if ".so" not in line and "v" not in line:
             # print(line)
             tmp = []
             for elem in line.split(" "):
@@ -74,9 +74,10 @@ def check_between(addr, interval_list):
 
 def dump_block(pid, start, end, output):
     size = end - start
-    if size > 3000000:
-        print("oversize:", size)
-        return
+    print("dump size: {}".format(size))
+    # if size > 3000000:
+    #     print("oversize:", size)
+    #     return
 
     with open("/proc/%s/mem" % pid, 'rb') as f:
         f.seek(start)

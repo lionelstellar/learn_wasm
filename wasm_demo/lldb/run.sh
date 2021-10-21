@@ -1,2 +1,2 @@
 #！/bin/bash
-/root/.wasmtime/bin/wasmtime test.wasm
+wasmtime test.wasm
