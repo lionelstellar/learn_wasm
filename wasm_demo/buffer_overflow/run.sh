@@ -1,2 +1,2 @@
 #！/bin/bash
-/root/.wasmtime/bin/wasmtime --dir=./log overflow.wasm
+wasmtime --dir=./log overflow.wasm
