@@ -60,3 +60,5 @@ runtime/*
 output/*
 mem_output
 .vscode/c_cpp_properties.json
+
+configs/*
