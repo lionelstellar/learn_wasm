@@ -40,10 +40,10 @@
    })
   }
   //调用
-  loadWebAssembly('./demo.wasm')
+  loadWebAssembly('demo.wasm')
   .then(instance => {
-   const add = instance.exports._add//取出c里面的方法
-   const square = instance.exports._square//取出c里面的方法
+   const add = instance.exports.add//取出c里面的方法
+   const square = instance.exports.square//取出c里面的方法
 
    console.log('10 + 20 =', add(10, 20))
    console.log('3*3 =', square(3))
