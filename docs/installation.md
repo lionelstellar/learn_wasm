@@ -47,7 +47,7 @@ $ source ./emsdk_env.sh
 添加环境变量
 
 ```bash
-$ source "/home/jiangyikun/learn_wasm/toolchain/emsdk/emsdk_env.sh"
+$ source "/path to/learn_wasm/toolchain/emsdk/emsdk_env.sh"
 
 ## 如果不想每次打开新的shell都要source一遍，可以把上面这个source执行的结果写入到/etc/profile
 ```
@@ -105,7 +105,7 @@ $ cmake --build .
 
 ```bash
 #WABT
-export PATH=$PATH:/home/jiangyikun/learn_wasm/toolchain/wabt/build
+export PATH=$PATH:/path to/learn_wasm/toolchain/wabt/build
 ```
 
 测试
