@@ -9,5 +9,5 @@ echo "creating project: "$project
 
 cp -r skeleton $project
 cd $project
-sed -i "s/{}/${project}/g" Makefile
-sed -i "s/{}/${project}/g" run.sh
+sed -i '' "s/{}/${project}/g" Makefile
+sed -i '' "s/{}/${project}/g" run.sh
