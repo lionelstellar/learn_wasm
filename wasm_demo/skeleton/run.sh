@@ -1,2 +1,3 @@
 #!/bin/bash
-wasmtime main.wasm
+target={}
+wasmtime $(target).wasm

@@ -19,7 +19,7 @@ int main()
 
     /* 比较账户、口令是否正确 */
     char buf[1024] = {};
-    if(!strcmp(username, "huawei") && !strcmp(password, "123456")) {
+    if(!strcmp(username, "jack") && !strcmp(password, "123456")) {
         strcat(buf, log_success_msg);
         printf("login success!\n"); 
     } else {      
